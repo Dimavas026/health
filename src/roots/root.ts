@@ -1,7 +1,5 @@
-import { ComponentType } from 'react'
-
-export interface Root {
+export interface IRoot {
   path: string
-  component: ComponentType
+  component: any
   exact: boolean
 }

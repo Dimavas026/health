@@ -1,8 +1,8 @@
-import { Root } from './root'
+import { IRoot } from './root'
 import { Home } from '../pages/home/home'
 import { Login } from '../pages/login/login'
 
-export const publicRoutes: Root[] = [
+export const publicRoutes: IRoot[] = [
   {
     path: '/',
     exact: true,

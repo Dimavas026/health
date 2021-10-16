@@ -1,0 +1,52 @@
+{
+  "extends": ["airbnb", "airbnb/hooks"],
+  // for ts
+  "parser": "@typescript-eslint/parser",
+  // for ts
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    // semicolon no
+    "semi": ["error", "never"],
+    "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+    // import React from 'react'
+    "no-use-before-define": "off",
+    "@typescript-eslint/no-use-before-define": ["error"],
+    // missing file extension
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    // allows to use named exports
+    "import/prefer-default-export": "off",
+    // allows to define label?: string
+    "react/require-default-props": [0],
+    // for handlers
+    "no-unused-vars": ["error", { "args": "none" }],
+//    "implicit-arrow-linebreak": ["error", "below"]
+    "react/button-has-type": [0],
+    "no-param-reassign": ["error", { "props": false }]
+  },
+  "env": {
+    // for using document
+    "browser": true,
+    "node": true
+  },
+  "globals": {
+    // for using document
+    "document": false
+  },
+  "settings": {
+    // for import files
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}

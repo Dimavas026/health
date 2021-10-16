@@ -1,27 +1,31 @@
-import React, { useEffect } from 'react'
+import React, { useState } from 'react'
 import { useFormik } from 'formik'
-import { Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
-import { api } from '../../api/interceptors'
+import { useObserver } from 'mobx-react'
 import { Input } from '../../components/input'
+import { useStores } from '../../store/root'
 
 export const Login = () => {
-  useEffect(() => {
-    api
-      .get('/todos')
-      .then((response) => {
-        console.log(response)
-      })
-  }, [])
+  // eslint-disable-next-line no-unused-vars
+  const [isLoginPage, setIsLoginPage] = useState(false)
+  const { authStore } = useStores()
+  const { push } = useHistory()
 
   const formik = useFormik<{ login: string; password: string }>({
     initialValues: {
       login: '',
       password: '',
     },
-    onSubmit: (values) => {
-      console.log(values)
-    },
+    onSubmit: async (values) => (
+      isLoginPage
+        ? authStore.login(values.login, values.password).then((_) => {
+          push('/')
+        })
+        : authStore.registration(values.login, values.password).then((_) => {
+          push('/')
+        })
+    ),
     // todo: validation schema
     validateOnChange: true,
     validate: (values) => {
@@ -34,11 +38,11 @@ export const Login = () => {
       if (!values.password) {
         errors.password = 'Required'
       }
-
       return errors
     },
   })
-  return (
+
+  return useObserver(() => (
     <form onSubmit={formik.handleSubmit}>
       <Input
         name="login"
@@ -55,10 +59,9 @@ export const Login = () => {
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
       />
-      <button type="submit">Submit</button>
-      {formik.touched.login && formik.errors.login}
-      {formik.touched.password && formik.errors.password}
-      <Link to="/">HOME</Link>
+      <button type="submit">
+        {isLoginPage ? 'войти' : 'зарегистрироваться'}
+      </button>
     </form>
-  )
+  ))
 }

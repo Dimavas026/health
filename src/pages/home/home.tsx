@@ -1,4 +1,6 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { useObserver } from 'mobx-react'
 
-export const Home = () => <div><Link to="/login">LOGIN</Link></div>
+export const Home = () => useObserver(() => (
+  <div>home</div>
+))
