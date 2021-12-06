@@ -1,12 +1,8 @@
 export interface IProduct {
-  id: string
-  name: string
-  macroNutrPercentage: string
-  macroNutrDistrib: MacroNutrDistrib
-}
-
-interface MacroNutrDistrib {
-  proteins: number
-  fats: number
-  carbohydrates: number
+  id?: string
+  name?: string
+  productWeight?: number
+  proteinsWeight?: number
+  fatsWeight?: number
+  carbohydratesWeight?: number
 }

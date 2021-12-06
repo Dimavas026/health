@@ -1,0 +1,24 @@
+.edit {
+  display: flex;
+  flex-flow: wrap column;
+  align-items: center;
+  gap: 40px;
+
+  &__block {
+    width: 500px;
+    display: flex;
+    align-items: center;
+
+    &:last-child {
+      justify-content: center;
+    }
+  }
+
+  &__title {
+    flex-basis: 20%;
+  }
+
+  &__form {
+    flex-basis: 80%;
+  }
+}

@@ -12,7 +12,10 @@ export class AuthService {
   }
 
   static async registration(email: string, password: string): Promise<AxiosResponse<AuthResponse>> {
-    return api.post<{ email: string; password: string }, AxiosResponse<AuthResponse>>('/registration', { email, password })
+    return api.post<{ email: string; password: string }, AxiosResponse<AuthResponse>>(
+      '/registration',
+      { email, password },
+    )
   }
 
   static async refresh(): Promise<AxiosResponse<AuthResponse>> {

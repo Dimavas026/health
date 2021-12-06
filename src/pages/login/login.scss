@@ -1,0 +1,19 @@
+@import 'src/common/constants.scss';
+@import 'src/common/mixins.scss';
+
+.login {
+  display: flex;
+  //align-items: center;
+  justify-content: center;
+  //height: calc(100vh - #{$header-height});
+
+  &__form {
+    @include box-shadow-common;
+    border-radius: 16px;
+    gap: $input-gap;
+    display: flex;
+    padding: $input-padding;
+    flex-direction: column;
+    align-items: center;
+  }
+}

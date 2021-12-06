@@ -1,0 +1,41 @@
+@import 'src/common/colors';
+@import 'src/common/mixins';
+
+.info-frame {
+  display: flex;
+  box-sizing: border-box;
+  padding: 15px;
+  justify-content: space-between;
+  height: 100px;
+  border-radius: 20px;
+  @include box-shadow-common;
+  max-width: 250px;
+  min-width: 200px;
+
+  &:hover {
+    background-color: rgba($admin-theme, 0.5);
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__value {
+    font-size: 40px;
+    color: $admin-theme;
+  }
+
+  &__title {
+    @include upper-case-first-letter;
+    font-size: 20px;
+    color: $grey;
+
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    color: $admin-theme;
+  }
+}

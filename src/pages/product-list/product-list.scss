@@ -1,0 +1,37 @@
+@import 'src/common/colors.scss';
+@import 'src/common/mixins.scss';
+@import 'src/common/constants.scss';
+
+.product-list {
+  display: flex;
+  gap: 30px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 90%;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: $input-padding;
+  @include box-shadow-common;
+  border-radius: 16px;
+  height: 500px;
+  overflow: auto;
+}
+
+.product {
+  border-radius: 16px;
+  padding: 10px;
+  border: 1px solid $admin-theme;
+  display: flex;
+  justify-content: space-between;
+
+  &__trash {
+    color: $grey;
+    &:hover {
+      color: $red
+    }
+  }
+
+  &__title {
+    color: $admin-theme;
+  }
+}

@@ -1,0 +1,75 @@
+@import 'src/common/colors';
+@import 'src/common/mixins';
+
+.admin {
+  height: 100vh;
+  display: flex;
+
+  &__control-panel {
+    width: 100%;
+  }
+}
+
+// menu
+.menu {
+  @include box-shadow-common;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 300px;
+  background: $admin-theme;
+  padding: 10px;
+  position: relative;
+  transition: width ease .5s;
+
+  &--reduced {
+    width: 60px;
+    //align-items: center;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 5px;
+    right: -50px;
+    transition: all ease .5s;
+
+    &--reduced {
+      color: $white;
+      right: calc((70px - 40px) / 2 );
+    }
+  }
+}
+
+// menu-element
+.menu-element {
+  padding: 10px 15px;
+  border-radius: 15px;
+  color: $white;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  cursor: pointer;
+  overflow: hidden;
+
+  &:first-child {
+    margin-bottom: 50px;
+    pointer-events: none;
+  }
+
+  &:not(:first-child):hover {
+    color: $admin-theme;
+    background: $white;
+  }
+
+  &__title {
+    @include upper-case-first-letter;
+    font-size: 22px;
+    display: block;
+    white-space: nowrap;
+    transition: opacity ease 0.3s;
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+}

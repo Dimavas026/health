@@ -1,0 +1,62 @@
+@import "src/common/mixins";
+@import "src/common/colors";
+
+.table {
+  display: flex;
+  flex-direction: column;
+}
+
+.table-body {
+  display: flex;
+  flex-direction: column;
+
+  &__row {
+    display: flex;
+    padding: 15px 15px 5px 15px;
+    border-bottom: .3px solid rgba($admin-theme, 0.1);
+
+    &:hover {
+      background: rgba($admin-theme, 0.1);
+      border-bottom: .3px solid $white;
+    }
+  }
+
+  &__cell {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    text-align: center;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+
+}
+
+.table-header {
+  display: flex;
+  padding: 15px 15px 5px 15px;
+
+  &__cell {
+    @include upper-case-first-letter;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: center;
+
+    &:first-child {
+      text-align: left;
+    }
+
+    &:last-child {
+      text-align: right;
+    }
+  }
+}
+
