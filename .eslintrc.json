@@ -45,7 +45,8 @@
     "react-hooks/exhaustive-deps": ["off"],
     // there is no need to import React from 'react' to use jsx
     "react/react-in-jsx-scope": ["off"],
-    "jsx-a11y/label-has-associated-control": "off"
+    "jsx-a11y/label-has-associated-control": "off",
+    "no-console": "off"
   },
   "env": {
     // for using document
