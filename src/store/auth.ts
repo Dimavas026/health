@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { makeAutoObservable } from 'mobx'
 import { IUser } from '../models/user'
 import { AuthService } from '../services/auth'
