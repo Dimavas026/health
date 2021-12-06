@@ -1,0 +1,17 @@
+@import 'src/common/colors.scss';
+
+.input {
+  height: 54px;
+  padding: 10px;
+  border-radius: 15px;
+  border: 2px solid $grey;
+  outline: none;
+  font-size: 20px;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus, &:hover {
+    border-color: $admin-theme;
+  }
+
+}

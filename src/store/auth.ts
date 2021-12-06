@@ -6,7 +6,7 @@ import { AuthService } from '../services/auth'
 export class AuthStore {
   user: IUser = {} as IUser
 
-  isAuth: boolean = false
+  isAuth = false
 
   constructor() {
     makeAutoObservable(this)
@@ -44,6 +44,7 @@ export class AuthStore {
       const response = await AuthService.refresh()
       localStorage.setItem('accessToken', response.data.accessToken)
       this.setIsAuth(true)
+      this.setUser(response.data.user)
     } catch (e) {
       console.log(e)
     }

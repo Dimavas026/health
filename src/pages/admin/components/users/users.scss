@@ -1,0 +1,52 @@
+@import 'src/common/colors.scss';
+@import 'src/common/mixins.scss';
+
+.users-page {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  margin: 40px;
+
+  &__info-frames {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  @media (max-width: 810px) {
+    &__info-frames {
+      justify-content: center;
+    }
+  }
+
+  &__trash-icon:hover {
+    color: red;
+  }
+
+  &__pencil-icon:hover {
+    color: $black;
+  }
+
+  &__additional-column {
+    display: flex;
+    gap: 5px;
+    color: $grey;
+  }
+
+  &__table {
+    @include box-shadow-common;
+    border-radius: 15px;
+    padding: 25px;
+    max-height: 500px;
+    overflow: auto;
+    min-height: 400px;
+
+    &--center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+}

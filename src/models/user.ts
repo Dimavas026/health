@@ -3,4 +3,5 @@ export interface IUser {
   password: string
   id: string
   isActivated: boolean
+  roles: string[]
 }

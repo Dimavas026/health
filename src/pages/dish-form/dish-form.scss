@@ -1,0 +1,12 @@
+@import 'src/common/constants.scss';
+
+.product-form {
+  width: 500px;
+  margin: 0 auto;
+
+  &__form {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: $input-gap;
+  }
+}

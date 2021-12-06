@@ -1,0 +1,15 @@
+@import 'src/common/colors.scss';
+@import 'src/common/mixins.scss';
+
+.button {
+  padding: 15px;
+  background-color: rgba($admin-theme, 0.8);
+  border: none;
+  border-radius: 15px;
+  color: $white;
+  @include upper-case-first-letter;
+
+  &:hover {
+    background-color: $admin-theme;
+  }
+}

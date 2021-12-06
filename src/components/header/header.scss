@@ -1,0 +1,40 @@
+@import 'src/common/colors.scss';
+@import 'src/common/mixins.scss';
+
+.header {
+  height: 55px;
+  background-color: $admin-theme;
+  color: $white;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include box-shadow-common;
+  margin-bottom: 50px;
+
+  &__left {
+    display: flex;
+    //visibility: hidden;
+  }
+
+  &__right {
+    display: flex;
+  }
+
+  &__label {
+    padding: 5px;
+    border-radius: 8px;
+  }
+
+  &__button {
+    padding: 5px;
+    cursor: pointer;
+    border-radius: 8px;
+
+    &:hover {
+      background-color: $white;
+      color: $admin-theme;
+    }
+  }
+}
