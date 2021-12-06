@@ -10,7 +10,7 @@
     "react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
     // import React from 'react'
     "no-use-before-define": "off",
-    "@typescript-eslint/no-use-before-define": ["error"],
+    "@typescript-eslint/no-use-before-define": ["off"],
     // missing file extension
     "import/extensions": [
       "error",
@@ -30,7 +30,22 @@
     "no-unused-vars": ["error", { "args": "none" }],
 //    "implicit-arrow-linebreak": ["error", "below"]
     "react/button-has-type": [0],
-    "no-param-reassign": ["error", { "props": false }]
+    "no-param-reassign": ["error", { "props": false }],
+    // spread props into component
+    "react/jsx-props-no-spreading": "off",
+    // onClick for div without role
+    "jsx-a11y/click-events-have-key-events": "off",
+    "jsx-a11y/no-static-element-interactions": "off",
+    // several ternary operators inside each other
+    "no-nested-ternary": "off",
+    "max-len": ["error", { "code": 120 }],
+    // we can do path && path() instead of if (path) { path() }
+    "no-unused-expressions": ["error", { "allowShortCircuit": true }],
+    // useEffect dependencies
+    "react-hooks/exhaustive-deps": ["off"],
+    // there is no need to import React from 'react' to use jsx
+    "react/react-in-jsx-scope": ["off"],
+    "jsx-a11y/label-has-associated-control": "off"
   },
   "env": {
     // for using document
